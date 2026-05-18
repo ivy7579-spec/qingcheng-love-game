@@ -2,6 +2,7 @@
 
 try { window.gameState = gameState; } catch (error) {}
 
+
 /* codex-action-binder:start */
 (function wireCodexActionHandlers() {
     const exportedFunctionNames = ['addScore', 'adjustDockRaincoatDial', 'adjustMoon', 'adjustMoonParam', 'applyImpact', 'armBgmGestureStart', 'awardLevelReward', 'bankerReveal', 'bargainAction', 'bargainWagerFactor', 'cancelAssistOpen', 'checkClock', 'checkDockRaincoatSelection', 'checkIdiom', 'checkMirror', 'checkMoonPuzzle', 'checkMosquitoQuiz', 'checkSahibiniQuiz', 'clearDial', 'closeAssistModal', 'closeCheckpointModal', 'closeDockSecondImageModal', 'closeSourceTextModal', 'collectBayFood', 'combineDockMedicine', 'completeSoupCooking', 'confirmAssistOpen', 'createOriginalTextButton', 'deliverToLiuyuan', 'ensureStageOriginalLinks', 'enterGameShell', 'escapeHTML', 'finishBargain', 'finishDockReunion', 'formatBargainFactor', 'formatGameElapsed', 'formatSourceOriginalText', 'getBgmAudio', 'getDockDialValue', 'getGameElapsedText', 'getMirrorFeature', 'getPreviousStageTarget', 'getSourceTextStageId', 'goPreviousStage', 'handleClockAction', 'handleLv1Card', 'handleSourceTextBackdrop', 'hasItem', 'initBabingtonKitchen', 'initBargainGame', 'initCookingGame', 'initDockGame', 'initIdiomGrid', 'initLv1Cards', 'initMoonPuzzle', 'initMosquitoGame', 'initPoemGrid', 'initPullGame', 'initRaidGame', 'initSahibini', 'initScaleStage', 'initSoupCookingPage', 'initTelegram', 'inMoonRange', 'inspectRaidItem', 'jumpToCheckpoint', 'loseChips', 'moonPickUpPhone', 'moonSpeakSoftly', 'moonStaySilent', 'moonSyncValue', 'normalizeDockMedicineName', 'openAssist', 'openAssistModal', 'openCheckpointModal', 'openRecipe', 'openSourceTextModal', 'pauseBgm', 'performSoupStep', 'placeInBin', 'placeSahibini', 'playBgm', 'pressDial', 'renderBabingtonIngredients', 'renderBargainBetControls', 'renderBayFoodItems', 'renderBaySelectPanel', 'renderCookingOptionGroup', 'renderCookingOptions', 'renderDockInventory', 'renderDockRaincoatChoices', 'renderRaidRoomItems', 'renderRaidSelectPanel', 'renderRewardText', 'renderSahibiniBins', 'renderSahibiniPool', 'renderScaleUI', 'renderSoupCookingSteps', 'renderSoupPhotoSteps', 'resetSourceTextScroll', 'revealDockMaskedText', 'scaleItemHTML', 'setActiveBlank', 'setBargainBet', 'setDockSceneImage', 'setLevelBackground', 'setMirrorPath', 'showBargainFinal', 'showDockSecondImageModal', 'spawnInsult', 'spawnMosquito', 'startGame', 'stepMirrorFeature', 'submitDial', 'submitPull', 'syncPlayerTitleFromInput', 'toggleBabingtonIngredient', 'toggleBayFoodSelection', 'toggleBgm', 'toggleDockItem', 'toggleRaidRoomSelection', 'toggleSoupPhotoStep', 'transitionTo', 'unlockCheckpointMenu', 'unlockDockRaincoatPuzzle', 'updateAssistUI', 'updateBargainUI', 'updateBgmToggle', 'updateBlankVisuals', 'updateDockDialChoice', 'updateHeaderOriginalLink', 'updateInventorySummary', 'updateMirror', 'updateMoonVisuals', 'updateMosquitoVisuals', 'updatePoemCount', 'updatePullUI', 'updateScore', 'validateBabingtonIngredients', 'validateBayFood', 'validateDockMedicineName', 'validatePoemGrid', 'validateRaidRoomFood', 'validateRecipeChoice', 'validateSahibini', 'validateScale', 'validateSoupCookingAnswer', 'validateTelegram'];
@@ -12,22 +13,50 @@ try { window.gameState = gameState; } catch (error) {}
         } catch (error) {}
     });
     try { window.gameState = gameState; } catch (error) {}
-    document.documentElement.dataset.gameScriptLoaded = 'ready';
-    if (window.__codexActionBinderInstalled) return;
-    window.__codexActionBinderInstalled = true;
-    document.addEventListener('click', function(event) {
-        const target = event.target && event.target.closest ? event.target.closest('[onclick]') : null;
-        if (!target || !document.documentElement.contains(target)) return;
-        const code = target.getAttribute('onclick');
-        if (!code) return;
-        event.preventDefault();
-        event.stopPropagation();
-        event.stopImmediatePropagation();
+
+    function runInlineAction(code, event, element) {
         try {
-            return Function('event', 'with (window) { ' + code + '; }').call(target, event);
+            return eval(code);
         } catch (error) {
             console.error('Game action failed:', code, error);
         }
-    }, true);
+    }
+
+    function bindInlineAction(element) {
+        if (!element || element.dataset.codexBoundAction === 'true') return;
+        const code = element.getAttribute('onclick');
+        if (!code) return;
+        element.dataset.codexBoundAction = 'true';
+        element.onclick = function(event) {
+            return runInlineAction.call(element, code, event || window.event, element);
+        };
+    }
+
+    function bindAllInlineActions(root) {
+        const scope = root && root.querySelectorAll ? root : document;
+        if (scope.matches && scope.matches('[onclick]')) bindInlineAction(scope);
+        scope.querySelectorAll('[onclick]').forEach(bindInlineAction);
+        document.documentElement.dataset.boundActionCount = String(document.querySelectorAll('[data-codex-bound-action="true"]').length);
+    }
+
+    bindAllInlineActions(document);
+    if (!window.__codexActionBinderInstalled) {
+        window.__codexActionBinderInstalled = true;
+        document.addEventListener('click', function(event) {
+            const target = event.target && event.target.closest ? event.target.closest('[onclick]') : null;
+            if (!target || !document.documentElement.contains(target)) return;
+            bindInlineAction(target);
+        }, true);
+        new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (node && node.nodeType === 1) bindAllInlineActions(node);
+                });
+            });
+        }).observe(document.documentElement, { childList: true, subtree: true });
+    }
+    document.documentElement.dataset.startGameType = typeof window.startGame;
+    document.documentElement.dataset.transitionToType = typeof window.transitionTo;
+    document.documentElement.dataset.gameScriptLoaded = 'ready';
 })();
 /* codex-action-binder:end */
