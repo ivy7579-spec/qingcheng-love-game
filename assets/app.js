@@ -3,20 +3,161 @@
 try { window.gameState = gameState; } catch (error) {}
 
 
-/* codex-action-binder:start */
-(function wireCodexActionHandlers() {
-    const exportedFunctionNames = ['addScore', 'adjustDockRaincoatDial', 'adjustMoon', 'adjustMoonParam', 'applyImpact', 'armBgmGestureStart', 'awardLevelReward', 'bankerReveal', 'bargainAction', 'bargainWagerFactor', 'cancelAssistOpen', 'checkClock', 'checkDockRaincoatSelection', 'checkIdiom', 'checkMirror', 'checkMoonPuzzle', 'checkMosquitoQuiz', 'checkSahibiniQuiz', 'clearDial', 'closeAssistModal', 'closeCheckpointModal', 'closeDockSecondImageModal', 'closeSourceTextModal', 'collectBayFood', 'combineDockMedicine', 'completeSoupCooking', 'confirmAssistOpen', 'createOriginalTextButton', 'deliverToLiuyuan', 'ensureStageOriginalLinks', 'enterGameShell', 'escapeHTML', 'finishBargain', 'finishDockReunion', 'formatBargainFactor', 'formatGameElapsed', 'formatSourceOriginalText', 'getBgmAudio', 'getDockDialValue', 'getGameElapsedText', 'getMirrorFeature', 'getPreviousStageTarget', 'getSourceTextStageId', 'goPreviousStage', 'handleClockAction', 'handleLv1Card', 'handleSourceTextBackdrop', 'hasItem', 'initBabingtonKitchen', 'initBargainGame', 'initCookingGame', 'initDockGame', 'initIdiomGrid', 'initLv1Cards', 'initMoonPuzzle', 'initMosquitoGame', 'initPoemGrid', 'initPullGame', 'initRaidGame', 'initSahibini', 'initScaleStage', 'initSoupCookingPage', 'initTelegram', 'inMoonRange', 'inspectRaidItem', 'jumpToCheckpoint', 'loseChips', 'moonPickUpPhone', 'moonSpeakSoftly', 'moonStaySilent', 'moonSyncValue', 'normalizeDockMedicineName', 'openAssist', 'openAssistModal', 'openCheckpointModal', 'openRecipe', 'openSourceTextModal', 'pauseBgm', 'performSoupStep', 'placeInBin', 'placeSahibini', 'playBgm', 'pressDial', 'renderBabingtonIngredients', 'renderBargainBetControls', 'renderBayFoodItems', 'renderBaySelectPanel', 'renderCookingOptionGroup', 'renderCookingOptions', 'renderDockInventory', 'renderDockRaincoatChoices', 'renderRaidRoomItems', 'renderRaidSelectPanel', 'renderRewardText', 'renderSahibiniBins', 'renderSahibiniPool', 'renderScaleUI', 'renderSoupCookingSteps', 'renderSoupPhotoSteps', 'resetSourceTextScroll', 'revealDockMaskedText', 'scaleItemHTML', 'setActiveBlank', 'setBargainBet', 'setDockSceneImage', 'setLevelBackground', 'setMirrorPath', 'showBargainFinal', 'showDockSecondImageModal', 'spawnInsult', 'spawnMosquito', 'startGame', 'stepMirrorFeature', 'submitDial', 'submitPull', 'syncPlayerTitleFromInput', 'toggleBabingtonIngredient', 'toggleBayFoodSelection', 'toggleBgm', 'toggleDockItem', 'toggleRaidRoomSelection', 'toggleSoupPhotoStep', 'transitionTo', 'unlockCheckpointMenu', 'unlockDockRaincoatPuzzle', 'updateAssistUI', 'updateBargainUI', 'updateBgmToggle', 'updateBlankVisuals', 'updateDockDialChoice', 'updateHeaderOriginalLink', 'updateInventorySummary', 'updateMirror', 'updateMoonVisuals', 'updateMosquitoVisuals', 'updatePoemCount', 'updatePullUI', 'updateScore', 'validateBabingtonIngredients', 'validateBayFood', 'validateDockMedicineName', 'validatePoemGrid', 'validateRaidRoomFood', 'validateRecipeChoice', 'validateSahibini', 'validateScale', 'validateSoupCookingAnswer', 'validateTelegram'];
-    exportedFunctionNames.forEach((name) => {
-        try {
-            const value = eval(name);
-            if (typeof value === 'function') window[name] = value;
-        } catch (error) {}
-    });
-    try { window.gameState = gameState; } catch (error) {}
 
+/* codex-action-binder:start */
+try { window.addScore = addScore; } catch (error) {}
+try { window.adjustDockRaincoatDial = adjustDockRaincoatDial; } catch (error) {}
+try { window.adjustMoon = adjustMoon; } catch (error) {}
+try { window.adjustMoonParam = adjustMoonParam; } catch (error) {}
+try { window.applyImpact = applyImpact; } catch (error) {}
+try { window.armBgmGestureStart = armBgmGestureStart; } catch (error) {}
+try { window.awardLevelReward = awardLevelReward; } catch (error) {}
+try { window.bankerReveal = bankerReveal; } catch (error) {}
+try { window.bargainAction = bargainAction; } catch (error) {}
+try { window.bargainWagerFactor = bargainWagerFactor; } catch (error) {}
+try { window.cancelAssistOpen = cancelAssistOpen; } catch (error) {}
+try { window.checkClock = checkClock; } catch (error) {}
+try { window.checkDockRaincoatSelection = checkDockRaincoatSelection; } catch (error) {}
+try { window.checkIdiom = checkIdiom; } catch (error) {}
+try { window.checkMirror = checkMirror; } catch (error) {}
+try { window.checkMoonPuzzle = checkMoonPuzzle; } catch (error) {}
+try { window.checkMosquitoQuiz = checkMosquitoQuiz; } catch (error) {}
+try { window.checkSahibiniQuiz = checkSahibiniQuiz; } catch (error) {}
+try { window.clearDial = clearDial; } catch (error) {}
+try { window.closeAssistModal = closeAssistModal; } catch (error) {}
+try { window.closeCheckpointModal = closeCheckpointModal; } catch (error) {}
+try { window.closeDockSecondImageModal = closeDockSecondImageModal; } catch (error) {}
+try { window.closeSourceTextModal = closeSourceTextModal; } catch (error) {}
+try { window.collectBayFood = collectBayFood; } catch (error) {}
+try { window.combineDockMedicine = combineDockMedicine; } catch (error) {}
+try { window.completeSoupCooking = completeSoupCooking; } catch (error) {}
+try { window.confirmAssistOpen = confirmAssistOpen; } catch (error) {}
+try { window.createOriginalTextButton = createOriginalTextButton; } catch (error) {}
+try { window.deliverToLiuyuan = deliverToLiuyuan; } catch (error) {}
+try { window.ensureStageOriginalLinks = ensureStageOriginalLinks; } catch (error) {}
+try { window.enterGameShell = enterGameShell; } catch (error) {}
+try { window.escapeHTML = escapeHTML; } catch (error) {}
+try { window.finishBargain = finishBargain; } catch (error) {}
+try { window.finishDockReunion = finishDockReunion; } catch (error) {}
+try { window.formatBargainFactor = formatBargainFactor; } catch (error) {}
+try { window.formatGameElapsed = formatGameElapsed; } catch (error) {}
+try { window.formatSourceOriginalText = formatSourceOriginalText; } catch (error) {}
+try { window.getBgmAudio = getBgmAudio; } catch (error) {}
+try { window.getDockDialValue = getDockDialValue; } catch (error) {}
+try { window.getGameElapsedText = getGameElapsedText; } catch (error) {}
+try { window.getMirrorFeature = getMirrorFeature; } catch (error) {}
+try { window.getPreviousStageTarget = getPreviousStageTarget; } catch (error) {}
+try { window.getSourceTextStageId = getSourceTextStageId; } catch (error) {}
+try { window.goPreviousStage = goPreviousStage; } catch (error) {}
+try { window.handleClockAction = handleClockAction; } catch (error) {}
+try { window.handleLv1Card = handleLv1Card; } catch (error) {}
+try { window.handleSourceTextBackdrop = handleSourceTextBackdrop; } catch (error) {}
+try { window.hasItem = hasItem; } catch (error) {}
+try { window.initBabingtonKitchen = initBabingtonKitchen; } catch (error) {}
+try { window.initBargainGame = initBargainGame; } catch (error) {}
+try { window.initCookingGame = initCookingGame; } catch (error) {}
+try { window.initDockGame = initDockGame; } catch (error) {}
+try { window.initIdiomGrid = initIdiomGrid; } catch (error) {}
+try { window.initLv1Cards = initLv1Cards; } catch (error) {}
+try { window.initMoonPuzzle = initMoonPuzzle; } catch (error) {}
+try { window.initMosquitoGame = initMosquitoGame; } catch (error) {}
+try { window.initPoemGrid = initPoemGrid; } catch (error) {}
+try { window.initPullGame = initPullGame; } catch (error) {}
+try { window.initRaidGame = initRaidGame; } catch (error) {}
+try { window.initSahibini = initSahibini; } catch (error) {}
+try { window.initScaleStage = initScaleStage; } catch (error) {}
+try { window.initSoupCookingPage = initSoupCookingPage; } catch (error) {}
+try { window.initTelegram = initTelegram; } catch (error) {}
+try { window.inMoonRange = inMoonRange; } catch (error) {}
+try { window.inspectRaidItem = inspectRaidItem; } catch (error) {}
+try { window.jumpToCheckpoint = jumpToCheckpoint; } catch (error) {}
+try { window.loseChips = loseChips; } catch (error) {}
+try { window.moonPickUpPhone = moonPickUpPhone; } catch (error) {}
+try { window.moonSpeakSoftly = moonSpeakSoftly; } catch (error) {}
+try { window.moonStaySilent = moonStaySilent; } catch (error) {}
+try { window.moonSyncValue = moonSyncValue; } catch (error) {}
+try { window.normalizeDockMedicineName = normalizeDockMedicineName; } catch (error) {}
+try { window.openAssist = openAssist; } catch (error) {}
+try { window.openAssistModal = openAssistModal; } catch (error) {}
+try { window.openCheckpointModal = openCheckpointModal; } catch (error) {}
+try { window.openRecipe = openRecipe; } catch (error) {}
+try { window.openSourceTextModal = openSourceTextModal; } catch (error) {}
+try { window.pauseBgm = pauseBgm; } catch (error) {}
+try { window.performSoupStep = performSoupStep; } catch (error) {}
+try { window.placeInBin = placeInBin; } catch (error) {}
+try { window.placeSahibini = placeSahibini; } catch (error) {}
+try { window.playBgm = playBgm; } catch (error) {}
+try { window.pressDial = pressDial; } catch (error) {}
+try { window.renderBabingtonIngredients = renderBabingtonIngredients; } catch (error) {}
+try { window.renderBargainBetControls = renderBargainBetControls; } catch (error) {}
+try { window.renderBayFoodItems = renderBayFoodItems; } catch (error) {}
+try { window.renderBaySelectPanel = renderBaySelectPanel; } catch (error) {}
+try { window.renderCookingOptionGroup = renderCookingOptionGroup; } catch (error) {}
+try { window.renderCookingOptions = renderCookingOptions; } catch (error) {}
+try { window.renderDockInventory = renderDockInventory; } catch (error) {}
+try { window.renderDockRaincoatChoices = renderDockRaincoatChoices; } catch (error) {}
+try { window.renderRaidRoomItems = renderRaidRoomItems; } catch (error) {}
+try { window.renderRaidSelectPanel = renderRaidSelectPanel; } catch (error) {}
+try { window.renderRewardText = renderRewardText; } catch (error) {}
+try { window.renderSahibiniBins = renderSahibiniBins; } catch (error) {}
+try { window.renderSahibiniPool = renderSahibiniPool; } catch (error) {}
+try { window.renderScaleUI = renderScaleUI; } catch (error) {}
+try { window.renderSoupCookingSteps = renderSoupCookingSteps; } catch (error) {}
+try { window.renderSoupPhotoSteps = renderSoupPhotoSteps; } catch (error) {}
+try { window.resetSourceTextScroll = resetSourceTextScroll; } catch (error) {}
+try { window.revealDockMaskedText = revealDockMaskedText; } catch (error) {}
+try { window.scaleItemHTML = scaleItemHTML; } catch (error) {}
+try { window.setActiveBlank = setActiveBlank; } catch (error) {}
+try { window.setBargainBet = setBargainBet; } catch (error) {}
+try { window.setDockSceneImage = setDockSceneImage; } catch (error) {}
+try { window.setLevelBackground = setLevelBackground; } catch (error) {}
+try { window.setMirrorPath = setMirrorPath; } catch (error) {}
+try { window.showBargainFinal = showBargainFinal; } catch (error) {}
+try { window.showDockSecondImageModal = showDockSecondImageModal; } catch (error) {}
+try { window.spawnInsult = spawnInsult; } catch (error) {}
+try { window.spawnMosquito = spawnMosquito; } catch (error) {}
+try { window.startGame = startGame; } catch (error) {}
+try { window.stepMirrorFeature = stepMirrorFeature; } catch (error) {}
+try { window.submitDial = submitDial; } catch (error) {}
+try { window.submitPull = submitPull; } catch (error) {}
+try { window.syncPlayerTitleFromInput = syncPlayerTitleFromInput; } catch (error) {}
+try { window.toggleBabingtonIngredient = toggleBabingtonIngredient; } catch (error) {}
+try { window.toggleBayFoodSelection = toggleBayFoodSelection; } catch (error) {}
+try { window.toggleBgm = toggleBgm; } catch (error) {}
+try { window.toggleDockItem = toggleDockItem; } catch (error) {}
+try { window.toggleRaidRoomSelection = toggleRaidRoomSelection; } catch (error) {}
+try { window.toggleSoupPhotoStep = toggleSoupPhotoStep; } catch (error) {}
+try { window.transitionTo = transitionTo; } catch (error) {}
+try { window.unlockCheckpointMenu = unlockCheckpointMenu; } catch (error) {}
+try { window.unlockDockRaincoatPuzzle = unlockDockRaincoatPuzzle; } catch (error) {}
+try { window.updateAssistUI = updateAssistUI; } catch (error) {}
+try { window.updateBargainUI = updateBargainUI; } catch (error) {}
+try { window.updateBgmToggle = updateBgmToggle; } catch (error) {}
+try { window.updateBlankVisuals = updateBlankVisuals; } catch (error) {}
+try { window.updateDockDialChoice = updateDockDialChoice; } catch (error) {}
+try { window.updateHeaderOriginalLink = updateHeaderOriginalLink; } catch (error) {}
+try { window.updateInventorySummary = updateInventorySummary; } catch (error) {}
+try { window.updateMirror = updateMirror; } catch (error) {}
+try { window.updateMoonVisuals = updateMoonVisuals; } catch (error) {}
+try { window.updateMosquitoVisuals = updateMosquitoVisuals; } catch (error) {}
+try { window.updatePoemCount = updatePoemCount; } catch (error) {}
+try { window.updatePullUI = updatePullUI; } catch (error) {}
+try { window.updateScore = updateScore; } catch (error) {}
+try { window.validateBabingtonIngredients = validateBabingtonIngredients; } catch (error) {}
+try { window.validateBayFood = validateBayFood; } catch (error) {}
+try { window.validateDockMedicineName = validateDockMedicineName; } catch (error) {}
+try { window.validatePoemGrid = validatePoemGrid; } catch (error) {}
+try { window.validateRaidRoomFood = validateRaidRoomFood; } catch (error) {}
+try { window.validateRecipeChoice = validateRecipeChoice; } catch (error) {}
+try { window.validateSahibini = validateSahibini; } catch (error) {}
+try { window.validateScale = validateScale; } catch (error) {}
+try { window.validateSoupCookingAnswer = validateSoupCookingAnswer; } catch (error) {}
+try { window.validateTelegram = validateTelegram; } catch (error) {}
+try { window.gameState = gameState; } catch (error) {}
+(function wireCodexActionHandlers() {
     function runInlineAction(code, event, element) {
         try {
-            return eval(code);
+            return Function('event', 'with (window) { ' + code + '; }').call(element, event);
         } catch (error) {
             console.error('Game action failed:', code, error);
         }
@@ -28,7 +169,7 @@ try { window.gameState = gameState; } catch (error) {}
         if (!code) return;
         element.dataset.codexBoundAction = 'true';
         element.onclick = function(event) {
-            return runInlineAction.call(element, code, event || window.event, element);
+            return runInlineAction(code, event || window.event, element);
         };
     }
 
